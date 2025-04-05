@@ -1,17 +1,13 @@
 function toggleMenu() {
-    document.querySelector(".mobile-menu").classList.toggle("show")
-  }
-  // Toggle mobile menu
-function toggleMenu() {
   const mobileMenu = document.querySelector(".mobile-menu")
   mobileMenu.classList.toggle("show")
 }
 
-// Video play functionality for the Quality Plants section
+
 document.addEventListener("DOMContentLoaded", () => {
-  const videoCard = document.querySelector(".quality-plants-section .video-card")
-  const playButton = document.querySelector(".quality-plants-section .play-button")
-  const video = document.querySelector(".quality-plants-section .video-element")
+  const videoCard = document.querySelector(".ads .video-card")
+  const playButton = document.querySelector(".ads .play-button")
+  const video = document.querySelector(".ads .video-element")
 
   if (videoCard && playButton && video) {
     playButton.addEventListener("click", () => {
@@ -32,10 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
       playButton.style.opacity = "1"
     })
 
-    // Hide play button when video ends (if it's looping, this won't matter)
+
     video.addEventListener("ended", () => {
       playButton.style.opacity = "1"
     })
   }
 })
+
+
+function toggleAccordion(element) {
+  const accordionItem = element.parentElement
+  const isActive = accordionItem.classList.contains("active")
+
+
+  document.querySelectorAll(".accordion-item").forEach((item) => {
+    item.classList.remove("active")
+  })
+
+ 
+  if (!isActive) {
+    accordionItem.classList.add("active")
+  }
+}
 

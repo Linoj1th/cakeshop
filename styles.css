@@ -815,3 +815,169 @@ img {
   font-size: 24px;
   margin-left: 5px;
 }
+
+
+
+/* FAQ Section Styles */
+.faq-section {
+  padding: 60px 0;
+  background-color: var(--light-gray);
+}
+
+.faq-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-container h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--dark-green);
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.accordion-item {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header {
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.accordion-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.accordion-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(90deg);
+}
+
+.accordion-content {
+  padding: 0 25px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+  padding: 0 25px 20px;
+  max-height: 300px;
+}
+
+.accordion-content p {
+  line-height: 1.6;
+  color: #555;
+}
+
+/* map section for shop */
+
+/* .map-section {
+  padding: 60px 0;
+}
+
+.map-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.map-container h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--dark-green);
+}
+
+.map-frame {
+  height: 450px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder-map {
+  height: 100%;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 18px;
+} */
+
+@media (max-width: 992px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-details {
+    flex-direction: row;
+  }
+
+  .contact-card {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-menu.show {
+    display: block;
+  }
+
+  .contact-hero h1 {
+    font-size: 36px;
+  }
+
+  .contact-details {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group:nth-child(3),
+  .form-group:nth-child(4),
+  .submit-btn {
+    grid-column: span 1;
+  }
+
+  .accordion-header h3 {
+    font-size: 18px;
+  }
+}
+
