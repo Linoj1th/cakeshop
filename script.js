@@ -30,6 +30,7 @@ function toggleMenu() {
   mobileMenu.classList.toggle("show")
 }
 
+// Video player functionality
 document.addEventListener("DOMContentLoaded", () => {
   const videoCard = document.querySelector(".ads .video-card")
   const playButton = document.querySelector(".ads .play-button")
@@ -60,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
+// Accordion functionality
 function toggleAccordion(element) {
   const accordionItem = element.parentElement
   const isActive = accordionItem.classList.contains("active")
@@ -113,6 +115,68 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
+// Product slider functionality
+document.addEventListener("DOMContentLoaded", () => {
+  initProductSliders()
+
+  function initProductSliders() {
+    const sliders = document.querySelectorAll(".slider")
+
+    sliders.forEach((slider) => {
+      const prevBtn = slider.parentElement.querySelector(".prev")
+      const nextBtn = slider.parentElement.querySelector(".next")
+      const slides = slider.querySelectorAll(".product-card")
+      const slideWidth = slides.length > 0 ? slides[0].offsetWidth + 25 : 0 // 25 is the gap
+      let currentIndex = 0
+
+      if (prevBtn && nextBtn && slides.length > 0) {
+        // Set initial position
+        updateSliderPosition()
+
+        prevBtn.addEventListener("click", () => {
+          if (currentIndex > 0) {
+            currentIndex--
+            updateSliderPosition()
+            updatePaginationDots()
+          }
+        })
+
+        nextBtn.addEventListener("click", () => {
+          if (currentIndex < Math.ceil(slides.length / 3) - 1) {
+            currentIndex++
+            updateSliderPosition()
+            updatePaginationDots()
+          }
+        })
+
+        function updateSliderPosition() {
+          const offset = -currentIndex * (slideWidth * 3)
+          slider.style.transform = `translateX(${offset}px)`
+        }
+
+        function updatePaginationDots() {
+          const dots = document.querySelectorAll(".pagination-dots .dot")
+          if (dots.length > 0) {
+            dots.forEach((dot, index) => {
+              dot.classList.toggle("active", index === currentIndex)
+            })
+          }
+        }
+
+        // Add click event to pagination dots
+        const dots = document.querySelectorAll(".pagination-dots .dot")
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            currentIndex = index
+            updateSliderPosition()
+            updatePaginationDots()
+          })
+        })
+      }
+    })
+  }
+})
+
 // Product card hover effects
 document.addEventListener("DOMContentLoaded", () => {
   const productCards = document.querySelectorAll(".product-card")
@@ -130,22 +194,96 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-// Pagination dots functionality
+// Category filter functionality
 document.addEventListener("DOMContentLoaded", () => {
-  const dots = document.querySelectorAll(".pagination-dots .dot")
+  const categoryBtns = document.querySelectorAll(".category-btn")
+  const productItems = document.querySelectorAll("[data-category]")
 
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      // Remove active class from all dots
-      dots.forEach((d) => d.classList.remove("active"))
+  categoryBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Remove active class from all buttons
+      categoryBtns.forEach((b) => b.classList.remove("active"))
 
-      // Add active class to clicked dot
-      dot.classList.add("active")
+      // Add active class to clicked button
+      btn.classList.add("active")
 
-      // Here you would typically change the displayed products
-      // For demonstration purposes, we'll just log the index
-      console.log(`Showing product set ${index + 1}`)
+      const category = btn.getAttribute("data-category")
+
+      // Show/hide products based on category
+      productItems.forEach((item) => {
+        if (category === "all" || item.getAttribute("data-category") === category) {
+          item.style.display = "block"
+        } else {
+          item.style.display = "none"
+        }
+      })
     })
   })
 })
+
+// Wishlist functionality
+function toggleWishlist(button) {
+  button.classList.toggle("active")
+
+  const productName = button.closest(".product-card").querySelector("h3").textContent
+
+  if (button.classList.contains("active")) {
+    showToast(`${productName} added to wishlist!`)
+  } else {
+    showToast(`${productName} removed from wishlist!`)
+  }
+}
+
+// Add to cart functionality
+function addToCart(productName, price) {
+  // Get current cart count
+  const cartCount = document.querySelector(".cart-count")
+  const count = Number.parseInt(cartCount.textContent)
+
+  // Increment cart count
+  cartCount.textContent = count + 1
+
+  // Save to localStorage for persistence
+  saveCartItem(productName, price)
+
+  // Show toast notification
+  showToast(`${productName} added to cart!`)
+}
+
+function saveCartItem(name, price) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || []
+
+  // Check if item already exists in cart
+  const existingItem = cart.find((item) => item.name === name)
+
+  if (existingItem) {
+    existingItem.quantity += 1
+  } else {
+    cart.push({
+      name: name,
+      price: price,
+      quantity: 1,
+    })
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart))
+}
+
+// Toast notification
+function showToast(message) {
+  const toast = document.getElementById("cart-toast")
+  const toastMessage = toast.querySelector(".toast-message")
+
+  toastMessage.textContent = message
+  toast.classList.add("show")
+
+  setTimeout(() => {
+    toast.classList.remove("show")
+  }, 3000)
+}
+
+function closeToast() {
+  const toast = document.getElementById("cart-toast")
+  toast.classList.remove("show")
+}
 

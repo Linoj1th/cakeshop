@@ -27,12 +27,13 @@
             <li><a href="#">Cake News</a></li>
             <li><a href="#">Our Story</a></li>
             <li><a href="#">Bakery</a></li>
+            <li><a href="products.html">Products</a></li>
             <li><a href="#">Recipes</a></li>
         </ul>
         <div class="cart">
-            <div class="cart-icon">
+            <a href="cart.html" class="cart-icon">
                 CART <span class="cart-count">3</span>
-            </div>
+            </a>
         </div>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
     </nav>
@@ -42,7 +43,9 @@
             <li><a href="#">Cake News</a></li>
             <li><a href="#">Our Story</a></li>
             <li><a href="#">Bakery</a></li>
+            <li><a href="products.html">Products</a></li>
             <li><a href="#">Recipes</a></li>
+            <li><a href="cart.html">Cart</a></li>
         </ul>
     </div>
 
@@ -60,6 +63,21 @@
             <div class="div20">
                 <img src="/placeholder.svg" alt="Seasonal Treats">
             </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section" data-aos="fade-up">
+        <div class="welcome-container">
+            <h1 class="welcome-title">Delicious Moments, Sweet Memories</h1>
+            <div class="welcome-divider">
+                <span class="divider-icon">🧁</span>
+            </div>
+            <p class="welcome-text">
+                Welcome to Sweet Delights, where we craft artisanal cakes and pastries that transform ordinary moments into extraordinary memories. 
+                Each creation is handmade with love, using only the finest ingredients to ensure every bite is pure bliss.
+                From elegant wedding cakes to playful birthday treats, our passion for baking shines through in every delicious detail.
+            </p>
         </div>
     </section>
 
@@ -98,6 +116,9 @@
             <button class="prev-btn">❮</button>
             <button class="next-btn">❯</button>
         </div>
+        <div class="view-more-container">
+            <a href="products.html" class="view-more-btn">View More Treats</a>
+        </div>
     </section>
     
     <!-- Most Popular Section -->
@@ -111,63 +132,242 @@
             </div>
         </div>
         
-        <div class="product-cards mobile-slider">
-            <div class="product-card" data-aos="fade-up" data-aos-delay="150">
-                <div class="product-image">
-                    <img src="./img/main.png" alt="Chocolate Fudge Cake">
-                    <button class="wishlist-btn">
-                        <span class="heart-icon">♡</span>
-                    </button>
-                    <button class="quick-view-btn">
-                        <span class="arrow-icon">→</span>
-                    </button>
+        <div class="product-slider-container">
+            <div class="product-cards slider" id="bestsellers-slider">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Chocolate Fudge Cake">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Chocolate Fudge Cake', 35.95)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chocolate Fudge Cake</h3>
+                        <p class="product-subtitle">Rich chocolate indulgence</p>
+                        <p class="product-price">$35.95</p>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3>Chocolate Fudge Cake</h3>
-                    <p class="product-subtitle">Rich chocolate indulgence</p>
-                    <p class="product-price">$35.95</p>
+                
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Vanilla Bean Cheesecake">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Vanilla Bean Cheesecake', 28.50)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vanilla Bean Cheesecake</h3>
+                        <p class="product-subtitle">Creamy classic favorite</p>
+                        <p class="product-price">$28.50</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Red Velvet Cupcakes">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Red Velvet Cupcakes', 15.75)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Red Velvet Cupcakes</h3>
+                        <p class="product-subtitle">Box of 6 delicious treats</p>
+                        <p class="product-price">$15.75</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Strawberry Shortcake">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Strawberry Shortcake', 32.95)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Strawberry Shortcake</h3>
+                        <p class="product-subtitle">Fresh berries & cream</p>
+                        <p class="product-price">$32.95</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Tiramisu Cake">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Tiramisu Cake', 38.50)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tiramisu Cake</h3>
+                        <p class="product-subtitle">Coffee-infused delight</p>
+                        <p class="product-price">$38.50</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Lemon Raspberry Cake">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Lemon Raspberry Cake', 36.75)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Lemon Raspberry Cake</h3>
+                        <p class="product-subtitle">Tangy & sweet perfection</p>
+                        <p class="product-price">$36.75</p>
+                    </div>
                 </div>
             </div>
             
-            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+            <button class="slider-nav prev">❮</button>
+            <button class="slider-nav next">❯</button>
+        </div>
+        
+        <div class="pagination-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- Our Products Section -->
+    <section class="our-products-section" data-aos="fade-up">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>Our Products</h2>
+            </div>
+            <div class="section-description">
+                <p>Explore our full range of handcrafted cakes, pastries, and sweet treats. Each item is made with premium ingredients and baked with love to ensure the perfect taste experience.</p>
+            </div>
+        </div>
+        
+        <div class="product-categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="cakes">Cakes</button>
+            <button class="category-btn" data-category="cupcakes">Cupcakes</button>
+            <button class="category-btn" data-category="pastries">Pastries</button>
+        </div>
+        
+        <div class="product-grid">
+            <div class="product-card" data-category="cakes" data-aos="fade-up" data-aos-delay="100">
                 <div class="product-image">
-                    <img src="./img/main.png" alt="Vanilla Bean Cheesecake">
-                    <button class="wishlist-btn">
+                    <img src="./img/main.png" alt="Black Forest Cake">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)">
                         <span class="heart-icon">♡</span>
                     </button>
                     <button class="quick-view-btn">
                         <span class="arrow-icon">→</span>
                     </button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Black Forest Cake', 42.95)">
+                        <span>Add to Cart</span>
+                    </button>
                 </div>
                 <div class="product-info">
-                    <h3>Vanilla Bean Cheesecake</h3>
-                    <p class="product-subtitle">Creamy classic favorite</p>
-                    <p class="product-price">$28.50</p>
+                    <h3>Black Forest Cake</h3>
+                    <p class="product-subtitle">Cherry & chocolate classic</p>
+                    <p class="product-price">$42.95</p>
                 </div>
             </div>
             
-            <div class="product-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="product-card" data-category="cupcakes" data-aos="fade-up" data-aos-delay="150">
                 <div class="product-image">
-                    <img src="./img/main.png" alt="Red Velvet Cupcakes">
-                    <button class="wishlist-btn">
+                    <img src="./img/main.png" alt="Salted Caramel Cupcakes">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)">
                         <span class="heart-icon">♡</span>
                     </button>
                     <button class="quick-view-btn">
                         <span class="arrow-icon">→</span>
                     </button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Salted Caramel Cupcakes', 18.50)">
+                        <span>Add to Cart</span>
+                    </button>
                 </div>
                 <div class="product-info">
-                    <h3>Red Velvet Cupcakes</h3>
-                    <p class="product-subtitle">Box of 6 delicious treats</p>
-                    <p class="product-price">$15.75</p>
+                    <h3>Salted Caramel Cupcakes</h3>
+                    <p class="product-subtitle">Sweet & salty perfection</p>
+                    <p class="product-price">$18.50</p>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="pastries" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-image">
+                    <img src="./img/main.png" alt="Fruit Tart">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                        <span class="heart-icon">♡</span>
+                    </button>
+                    <button class="quick-view-btn">
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Fruit Tart', 24.95)">
+                        <span>Add to Cart</span>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Fruit Tart</h3>
+                    <p class="product-subtitle">Fresh seasonal fruits</p>
+                    <p class="product-price">$24.95</p>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="cakes" data-aos="fade-up" data-aos-delay="250">
+                <div class="product-image">
+                    <img src="./img/main.png" alt="Carrot Cake">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                        <span class="heart-icon">♡</span>
+                    </button>
+                    <button class="quick-view-btn">
+                        <span class="arrow-icon">→</span>
+                    </button>
+                    <button class="add-to-cart-btn" onclick="addToCart('Carrot Cake', 34.50)">
+                        <span>Add to Cart</span>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Carrot Cake</h3>
+                    <p class="product-subtitle">Cream cheese frosting</p>
+                    <p class="product-price">$34.50</p>
                 </div>
             </div>
         </div>
         
-        <div class="pagination-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+        <div class="view-more-container">
+            <a href="products.html" class="view-more-btn">View All Products</a>
         </div>
     </section>
 
@@ -303,6 +503,17 @@
             </div>
         </div>
     </section>
+
+    <!-- Toast notification -->
+    <div class="toast-container">
+        <div class="toast" id="cart-toast">
+            <div class="toast-content">
+                <span class="toast-icon">🧁</span>
+                <span class="toast-message">Item added to cart!</span>
+            </div>
+            <button class="toast-close" onclick="closeToast()">×</button>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script defer src="script.js"></script>

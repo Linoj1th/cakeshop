@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Sweet Delights Cake Shop</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <div class="page-loader">
+        <div class="cupcake">
+            <div class="cupcake-body"></div>
+            <div class="cupcake-frosting"></div>
+            <div class="sprinkle sprinkle-1"></div>
+            <div class="sprinkle sprinkle-2"></div>
+            <div class="sprinkle sprinkle-3"></div>
+        </div>
+        <p>Loading sweet treats...</p>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="./img/logo.png" alt="Sweet Delights Logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Cake News</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Bakery</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Recipes</a></li>
+        </ul>
+        <div class="cart">
+            <a href="cart.html" class="cart-icon active">
+                CART <span class="cart-count">3</span>
+            </a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Cake News</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Bakery</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </div>
+
+    <section class="cart-section">
+        <div class="cart-container">
+            <h1 class="cart-title">Your Shopping Cart</h1>
+            
+            <div class="cart-empty" style="display: none;">
+                <div class="empty-cart-icon">🛒</div>
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added any sweet treats to your cart yet.</p>
+                <a href="products.html" class="view-more-btn">Browse Products</a>
+            </div>
+            
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping:</span>
+                    <span id="cart-shipping">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax:</span>
+                    <span id="cart-tax">$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            
+            <div class="cart-actions">
+                <a href="products.html" class="continue-shopping-btn">Continue Shopping</a>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+            
+            <div class="promo-code">
+                <h3>Have a promo code?</h3>
+                <div class="promo-input">
+                    <input type="text" placeholder="Enter promo code">
+                    <button>Apply</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="recommended-products" data-aos="fade-up">
+        <h2>You Might Also Like</h2>
+        <div class="product-slider-container">
+            <div class="product-cards slider" id="recommended-slider">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Chocolate Chip Cookies">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Chocolate Chip Cookies', 12.95)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chocolate Chip Cookies</h3>
+                        <p class="product-subtitle">Dozen freshly baked</p>
+                        <p class="product-price">$12.95</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Cinnamon Rolls">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Cinnamon Rolls', 18.50)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Cinnamon Rolls</h3>
+                        <p class="product-subtitle">Pack of 6 with icing</p>
+                        <p class="product-price">$18.50</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Macarons">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Macarons', 24.95)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Macarons</h3>
+                        <p class="product-subtitle">Assorted flavors box</p>
+                        <p class="product-price">$24.95</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="slider-nav prev">❮</button>
+            <button class="slider-nav next">❯</button>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script defer src="script.js"></script>
+    <script defer src="cart.js"></script>
+</body>
+</html>
+
