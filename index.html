@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Website</title>
+    <title>Sweet Delights Cake Shop</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
+    <div class="page-loader">
+        <div class="cupcake">
+            <div class="cupcake-body"></div>
+            <div class="cupcake-frosting"></div>
+            <div class="sprinkle sprinkle-1"></div>
+            <div class="sprinkle sprinkle-2"></div>
+            <div class="sprinkle sprinkle-3"></div>
+        </div>
+        <p>Loading sweet treats...</p>
+    </div>
+
     <nav class="navbar">
         <div class="logo">
-            <img src="./img/logo.png" alt="Brand Logo">
+            <img src="./img/logo.png" alt="Sweet Delights Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="#">Life & News</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Store</a></li>
+            <li><a href="#">Cake News</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Bakery</a></li>
             <li><a href="#">Recipes</a></li>
         </ul>
         <div class="cart">
@@ -27,49 +39,46 @@
 
     <div class="mobile-menu">
         <ul>
-            <li><a href="#">Life & News</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Store</a></li>
+            <li><a href="#">Cake News</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Bakery</a></li>
             <li><a href="#">Recipes</a></li>
         </ul>
     </div>
 
     <section class="hero-section">
-        <div class="parent">
+        <div class="parent" data-aos="fade-up">
             <div class="div17">
-                <img src="./img/promovideo1.gif" alt="Main Product">
-                <!-- <video autoplay loop muted playsinline class="video-element">
-                    <source src="./img/sweee eeeet! (1).mp4" type="video/mp4">
-                </video> -->
+                <img src="./img/promovideo1.gif" alt="Signature Cakes">
             </div>
             <div class="div18">
-                <img src="./img/promo1.png" alt="Promo 1">
+                <img src="./img/promo1.png" alt="Special Cupcakes">
             </div>
             <div class="div19">
-                <img src="./img/promo.png" alt="Promo 2">
+                <img src="./img/promo.png" alt="Birthday Cakes">
             </div>
             <div class="div20">
-                <img src="/placeholder.svg" alt="Top Picks">
+                <img src="/placeholder.svg" alt="Seasonal Treats">
             </div>
         </div>
     </section>
 
     <!-- quick view -->
-    <section class="quick-view "> 
-        <div class="card2">
+    <section class="quick-view"> 
+        <div class="card2 mobile-slider" data-aos="fade-up">
             <div class="div3 card-item">
                 <div class="card-content">
-                    <h2>Pet Friendly Plants</h2>
-                    <p>There are many houseplant options for your home that are nontoxic. These plants will add life to your home while keeping your kids and pets safe.</p>
+                    <h2>Birthday Cakes</h2>
+                    <p>Celebrate your special day with our custom birthday cakes. Each cake is handcrafted with premium ingredients and decorated to perfection for your celebration.</p>
                     <div class="card-button">
-                        <button>Discover</button>
+                        <button>Order Now</button>
                     </div>
                 </div>
             </div>
             <div class="div4 card-item">
                 <div class="card-content">
-                    <h2>Orchids</h2>
-                    <p>Orchids are easy-to-maintain tropical flowers, and there are many varieties to choose from in our collection.</p>
+                    <h2>Wedding Cakes</h2>
+                    <p>Make your wedding day unforgettable with our elegant multi-tiered cakes, designed to match your theme and taste preferences.</p>
                     <div class="card-button">
                         <button>Browse</button>
                     </div>
@@ -77,132 +86,137 @@
             </div>
             <div class="div5 card-item">
                 <div class="card-content">
-                    <h2>Succulents</h2>
-                    <p>All succulents are cacti, but not all cacti are succulents. Explore our magnificent collection today.</p>
+                    <h2>Cupcakes</h2>
+                    <p>Perfect bite-sized treats for any occasion. Our cupcakes come in a variety of flavors and decorative toppings to satisfy every sweet tooth.</p>
                     <div class="card-button">
                         <button>Discover</button>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="slider-controls">
+            <button class="prev-btn">❮</button>
+            <button class="next-btn">❯</button>
+        </div>
     </section>
-<!-- Most Popular Section -->
-<section class="Most-Popular">
-    <div class="section-header">
-        <div class="section-title">
-            <h2>Most Popular</h2>
-        </div>
-        <div class="section-description">
-            <p>Discover our customers' favorite picks that bring life and beauty to any space. These bestsellers are loved for their stunning appearance and easy maintenance.</p>
-        </div>
-    </div>
     
-    <div class="product-cards">
-        <div class="product-card">
-            <div class="product-image">
-                <img src="./img/main.png" alt="Monstera Deliciosa">
-                <button class="wishlist-btn">
-                    <span class="heart-icon">♡</span>
-                </button>
-                <button class="quick-view-btn">
-                    <span class="arrow-icon">→</span>
-                </button>
+    <!-- Most Popular Section -->
+    <section class="Most-Popular" data-aos="fade-up" data-aos-delay="100">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>Best Sellers</h2>
             </div>
-            <div class="product-info">
-                <h3>Monstera Deliciosa</h3>
-                <p class="product-subtitle">Swiss cheese plant</p>
-                <p class="product-price">$135.95</p>
+            <div class="section-description">
+                <p>Discover our customers' favorite sweet treats that bring joy to any celebration. These bestsellers are loved for their delicious flavors and beautiful decorations.</p>
             </div>
         </div>
         
-        <div class="product-card">
-            <div class="product-image">
-                <img src="./img/main.png" alt="Snake Plant">
-                <button class="wishlist-btn">
-                    <span class="heart-icon">♡</span>
-                </button>
-                <button class="quick-view-btn">
-                    <span class="arrow-icon">→</span>
-                </button>
+        <div class="product-cards mobile-slider">
+            <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="product-image">
+                    <img src="./img/main.png" alt="Chocolate Fudge Cake">
+                    <button class="wishlist-btn">
+                        <span class="heart-icon">♡</span>
+                    </button>
+                    <button class="quick-view-btn">
+                        <span class="arrow-icon">→</span>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Chocolate Fudge Cake</h3>
+                    <p class="product-subtitle">Rich chocolate indulgence</p>
+                    <p class="product-price">$35.95</p>
+                </div>
             </div>
-            <div class="product-info">
-                <h3>Snake Plant</h3>
-                <p class="product-subtitle">Perfect for beginners</p>
-                <p class="product-price">$98.50</p>
+            
+            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-image">
+                    <img src="./img/main.png" alt="Vanilla Bean Cheesecake">
+                    <button class="wishlist-btn">
+                        <span class="heart-icon">♡</span>
+                    </button>
+                    <button class="quick-view-btn">
+                        <span class="arrow-icon">→</span>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Vanilla Bean Cheesecake</h3>
+                    <p class="product-subtitle">Creamy classic favorite</p>
+                    <p class="product-price">$28.50</p>
+                </div>
+            </div>
+            
+            <div class="product-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="product-image">
+                    <img src="./img/main.png" alt="Red Velvet Cupcakes">
+                    <button class="wishlist-btn">
+                        <span class="heart-icon">♡</span>
+                    </button>
+                    <button class="quick-view-btn">
+                        <span class="arrow-icon">→</span>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Red Velvet Cupcakes</h3>
+                    <p class="product-subtitle">Box of 6 delicious treats</p>
+                    <p class="product-price">$15.75</p>
+                </div>
             </div>
         </div>
         
-        <div class="product-card">
-            <div class="product-image">
-                <img src="./img/main.png" alt="ZZ Plant">
-                <button class="wishlist-btn">
-                    <span class="heart-icon">♡</span>
-                </button>
-                <button class="quick-view-btn">
-                    <span class="arrow-icon">→</span>
-                </button>
-            </div>
-            <div class="product-info">
-                <h3>ZZ Plant</h3>
-                <p class="product-subtitle">Low maintenance favorite</p>
-                <p class="product-price">$115.75</p>
-            </div>
+        <div class="pagination-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
-    </div>
-    
-    <div class="pagination-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
-</section>
+    </section>
 
     <!-- Promotion Section -->
-    <section class="promotion-news-section">
+    <section class="promotion-news-section" data-aos="fade-up">
         <div class="collection-header">
             <div class="collection-description">
-                <p>Stay updated with our latest promotions, events, and plant care tips. Join our community to learn more about nurturing your indoor garden.</p>
+                <p>Stay updated with our latest seasonal specials, cake decorating workshops, and baking tips. Join our sweet community to learn more about creating and enjoying delicious treats.</p>
             </div>
             <div class="collection-title">
-                <h2>Promotion</h2>
+                <h2>Seasonal Specials</h2>
             </div>
         </div>
         
         <div class="promo-grid">
-            <div class="div10 collection-card">
+            <div class="div10 collection-card" data-aos="fade-right" data-aos-delay="100">
                 <div class="card-overlay">
-                    <h3>Philodendron</h3>
-                    <p>Philodendron comes in a variety of leaf shapes and colors, making it a great plant to complement your home decor while also being easy to care for.</p>
+                    <h3>Holiday Cakes</h3>
+                    <p>Celebrate the season with our festive holiday cakes, featuring seasonal flavors and beautiful decorations perfect for your family gatherings.</p>
                     <button class="nav-button">
                         <span class="arrow-icon">→</span>
                     </button>
                 </div>
             </div>
             
-            <div class="div11 collection-card">
+            <div class="div11 collection-card" data-aos="fade-left" data-aos-delay="150">
                 <div class="card-overlay">
-                    <h3>Calathea</h3>
-                    <p>Known for their beautiful patterned leaves that move throughout the day.</p>
+                    <h3>Fruit Tarts</h3>
+                    <p>Fresh seasonal fruits atop our buttery pastry crust with sweet custard filling.</p>
                     <button class="nav-button">
                         <span class="arrow-icon">→</span>
                     </button>
                 </div>
             </div>
             
-            <div class="div15 collection-card">
+            <div class="div15 collection-card" data-aos="fade-right" data-aos-delay="200">
                 <div class="card-overlay">
-                    <h3>Air Purifying</h3>
-                    <p>Plants that help clean the air in your home.</p>
+                    <h3>Gluten-Free Options</h3>
+                    <p>Delicious cakes and pastries made without gluten for those with dietary restrictions.</p>
                     <button class="nav-button">
                         <span class="arrow-icon">→</span>
                     </button>
                 </div>
             </div>
             
-            <div class="div16 collection-card">
+            <div class="div16 collection-card" data-aos="fade-left" data-aos-delay="250">
                 <div class="card-overlay">
-                    <h3>Low Light Tolerant</h3>
-                    <p>Perfect plants for spaces with limited natural light, ideal for apartments and offices.</p>
+                    <h3>Custom Celebration Cakes</h3>
+                    <p>Personalized cakes for weddings, birthdays, anniversaries, and special occasions, designed to your specifications.</p>
                     <button class="nav-button">
                         <span class="arrow-icon">→</span>
                     </button>
@@ -210,18 +224,16 @@
             </div>
         </div>
     </section>
-
-
     
     <!-- ads Section -->
-    <section class="ads">
+    <section class="ads" data-aos="fade-up">
         <div class="parent">
             <div class="div1">
-                <h2 class="section-title">Quality Plants & Curated Goods</h2>
+                <h2 class="section-title">Artisanal Cakes & Sweet Delights</h2>
                 <p class="section-description">
-                    We offer a carefully curated collection of indoor and outdoor plants, that are hand-picked from the best quality growers to ensure you get plants that thrive in your home. We focus on sustainability, eco-friendliness, & thoughtful design.
+                    We offer a carefully curated selection of handcrafted cakes and pastries, made with premium ingredients sourced from local suppliers. Our master bakers focus on quality, flavor, and beautiful presentation to make your celebrations truly special.
                 </p>
-                <div class="video-card">
+                <div class="video-card" data-aos="zoom-in">
                     <video autoplay loop muted playsinline class="video-element">
                         <source src="./img/sweee eeeet! (1).mp4" type="video/mp4">
                     </video>
@@ -233,78 +245,66 @@
         </div>
     </section>
 
-   
-<!-- faq-section -->
-    <section class="faq-section">
+    <!-- faq-section -->
+    <section class="faq-section" data-aos="fade-up">
         <div class="faq-container">
             <h2>Frequently Asked Questions</h2>
             
             <div class="accordion">
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <h3>Ordering for Delivery?</h3>
+                        <h3>How do I order a custom cake?</h3>
                         <span class="accordion-icon">→</span>
                     </div>
                     <div class="accordion-content">
-                        <p>We offer delivery services within a 25-mile radius of our store. Delivery fees start at $10 and may vary based on distance and order size. For large orders or special items, please contact us directly to arrange delivery.</p>
+                        <p>You can order a custom cake by visiting our bakery or placing an order online at least 48 hours in advance. For wedding cakes and large event orders, we recommend ordering 2-4 weeks ahead. Please provide details about size, flavor, design, and any dietary requirements.</p>
                     </div>
                 </div>
             
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="150">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <h3>Do we ship plants?</h3>
+                        <h3>Do you deliver cakes?</h3>
                         <span class="accordion-icon">→</span>
                     </div>
                     <div class="accordion-content">
-                        <p>Yes, we ship plants nationwide! We carefully package our plants to ensure they arrive in excellent condition. Shipping costs are calculated at checkout based on your location and the size of your order. Please note that extreme weather conditions may delay shipping.</p>
+                        <p>Yes, we offer delivery services within a 25-mile radius of our bakery. Delivery fees start at $10 and may vary based on distance and order size. For wedding cakes or large orders, please contact us directly to arrange special delivery options.</p>
                     </div>
                 </div>
                 
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <h3>Ordering for Pick up?</h3>
+                        <h3>Can I pick up my order?</h3>
                         <span class="accordion-icon">→</span>
                     </div>
                     <div class="accordion-content">
-                        <p>You can place an order online and select the "Store Pickup" option at checkout. We'll notify you when your order is ready, typically within 24 hours. Please bring your order confirmation and ID when you come to pick up your plants.</p>
+                        <p>You can place an order online and select the "Bakery Pickup" option at checkout. We'll notify you when your order is ready, typically within 24 hours. Please bring your order confirmation and ID when you come to pick up your sweet treats.</p>
                     </div>
                 </div>
                 
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="250">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <h3>Plant Care Tips</h3>
+                        <h3>Do you accommodate dietary restrictions?</h3>
                         <span class="accordion-icon">→</span>
                     </div>
                     <div class="accordion-content">
-                        <p>We provide care instructions with every plant purchase. For additional guidance, visit our website's Plant Care section or contact our plant experts. We're happy to help you keep your plants thriving!</p>
+                        <p>Yes, we offer gluten-free, dairy-free, nut-free, and vegan options. Please inform us of any allergies or dietary restrictions when placing your order so we can ensure your cake meets your specific needs.</p>
                     </div>
                 </div>
                 
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <h3>Returns & Exchanges</h3>
+                        <h3>How should I store my cake?</h3>
                         <span class="accordion-icon">→</span>
                     </div>
                     <div class="accordion-content">
-                        <p>We want you to be completely satisfied with your purchase. If you're not happy with your plant, please contact us within 7 days of receiving it. We may request photos to assess the condition before approving a return or exchange.</p>
+                        <p>For best freshness, store your cake in a cool, dry place away from direct sunlight. Cakes with cream cheese, whipped cream, or custard fillings should be refrigerated. Most cakes are best enjoyed within 3-5 days of purchase. For longer storage, you can freeze unfrosted cakes for up to 2 months.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- map for shop -->
-    <!-- <section class="map-section">
-        <div class="map-container">
-            <h2>Find Us</h2>
-            <div class="map-frame">
-                <div class="placeholder-map">
-                    <p>Map placeholder - Replace with your Google Maps embed code</p>
-                </div>
-            </div>
-        </div>
-    </section>
-     -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script defer src="script.js"></script>
 </body>
 </html>
