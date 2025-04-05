@@ -27,7 +27,7 @@
             <li><a href="#">Cake News</a></li>
             <li><a href="#">Our Story</a></li>
             <li><a href="#">Bakery</a></li>
-            <li><a href="products.html">Products</a></li>
+            <li><a href="products.html">Our Products</a></li>
             <li><a href="#">Recipes</a></li>
         </ul>
         <div class="cart">
@@ -251,6 +251,66 @@
                         <h3>Lemon Raspberry Cake</h3>
                         <p class="product-subtitle">Tangy & sweet perfection</p>
                         <p class="product-price">$36.75</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Chocolate Mousse Cake">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Chocolate Mousse Cake', 39.95)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chocolate Mousse Cake</h3>
+                        <p class="product-subtitle">Light and airy chocolate delight</p>
+                        <p class="product-price">$39.95</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Caramel Pecan Cheesecake">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Caramel Pecan Cheesecake', 42.50)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Caramel Pecan Cheesecake</h3>
+                        <p class="product-subtitle">Rich and nutty indulgence</p>
+                        <p class="product-price">$42.50</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-aos="fade-up" data-aos-delay="550">
+                    <div class="product-image">
+                        <img src="./img/main.png" alt="Coconut Cream Cake">
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                        <button class="quick-view-btn">
+                            <span class="arrow-icon">→</span>
+                        </button>
+                        <button class="add-to-cart-btn" onclick="addToCart('Coconut Cream Cake', 37.95)">
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Coconut Cream Cake</h3>
+                        <p class="product-subtitle">Tropical paradise flavor</p>
+                        <p class="product-price">$37.95</p>
                     </div>
                 </div>
             </div>
@@ -514,6 +574,78 @@
             <button class="toast-close" onclick="closeToast()">×</button>
         </div>
     </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="./img/logo.png" alt="Sweet Delights Logo">
+                    </div>
+                    <p class="footer-about">Sweet Delights Cake Shop creates artisanal cakes and pastries for all your special moments. Our passion for baking and dedication to quality ingredients ensures every bite is pure bliss.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><span>📱</span></a>
+                        <a href="#" class="social-icon"><span>📘</span></a>
+                        <a href="#" class="social-icon"><span>📸</span></a>
+                        <a href="#" class="social-icon"><span>📌</span></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="products.html">Our Products</a></li>
+                        <li><a href="#">Cake Gallery</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Our Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=cakes">Birthday Cakes</a></li>
+                        <li><a href="products.html?category=cakes">Wedding Cakes</a></li>
+                        <li><a href="products.html?category=cupcakes">Cupcakes</a></li>
+                        <li><a href="products.html?category=pastries">Pastries</a></li>
+                        <li><a href="products.html?category=cookies">Cookies</a></li>
+                        <li><a href="products.html">Custom Orders</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li><span>📍</span> 123 Bakery Lane, Sweet City, SC 12345</li>
+                        <li><span>📞</span> (555) 123-4567</li>
+                        <li><span>📧</span> info@sweetdelights.com</li>
+                        <li><span>🕒</span> Mon-Sat: 8:00 AM - 8:00 PM</li>
+                        <li><span>🕒</span> Sunday: 10:00 AM - 4:00 PM</li>
+                    </ul>
+                    
+                    <div class="footer-newsletter">
+                        <h4>Subscribe to our Newsletter</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Your email address">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sweet Delights Cake Shop. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script defer src="script.js"></script>

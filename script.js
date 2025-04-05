@@ -177,6 +177,54 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
+// Update the pagination dots to account for more slides
+document.addEventListener("DOMContentLoaded", () => {
+  // Update pagination dots for Best Sellers section
+  const dots = document.querySelectorAll(".pagination-dots .dot")
+  if (dots.length > 0) {
+    // Make sure we have 3 dots for pagination
+    const dotsContainer = document.querySelector(".pagination-dots")
+    if (dotsContainer && dots.length < 3) {
+      for (let i = dots.length; i < 3; i++) {
+        const newDot = document.createElement("span")
+        newDot.className = "dot"
+        newDot.setAttribute("data-slide", i)
+        dotsContainer.appendChild(newDot)
+      }
+    }
+
+    // Add click event to pagination dots
+    document.querySelectorAll(".pagination-dots .dot").forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        const slider = document.getElementById("bestsellers-slider")
+        if (slider) {
+          const slideWidth = slider.querySelector(".product-card").offsetWidth + 25 // 25 is the gap
+          const offset = -index * (slideWidth * 3)
+          slider.style.transform = `translateX(${offset}px)`
+
+          // Update active dot
+          document.querySelectorAll(".pagination-dots .dot").forEach((d, i) => {
+            d.classList.toggle("active", i === index)
+          })
+        }
+      })
+    })
+  }
+
+  // Add newsletter form submission handler
+  const newsletterForm = document.querySelector(".newsletter-form")
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", (e) => {
+      e.preventDefault()
+      const emailInput = newsletterForm.querySelector('input[type="email"]')
+      if (emailInput && emailInput.value) {
+        showToast(`Thank you for subscribing to our newsletter!`)
+        emailInput.value = ""
+      }
+    })
+  }
+})
+
 // Product card hover effects
 document.addEventListener("DOMContentLoaded", () => {
   const productCards = document.querySelectorAll(".product-card")
